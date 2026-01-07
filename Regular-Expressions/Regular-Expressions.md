@@ -1210,8 +1210,161 @@ INPUT      | RESULT  | CONSUMED   | TRACE
 -   Store trace entries as `(index, character)` tuples
 -   Add a toggle to enable/disable tracing
 
+This challenge moves your script from a simple matcher to a professional-grade Regex Debugger. By using a pointer (^) and specific failure reasons, you make the engine's "internal thoughts" visible to the user.
 
+The "Hard Mode" Regex Simulator
+Here is the implementation using tuple-based tracing and a toggle switch.
 
+```python
+def match_a_star_b_pro(text, tracing_enabled=True):
+    """
+    Returns (match_result, characters_consumed, trace, failure_reason)
+    Trace stores tuples: (current_index, character_at_index)
+    """
+    index = 0
+    length = len(text)
+    trace = []
+    failure_reason = "None"
+    
+    # Helper to capture state
+    def record_step():
+        if tracing_enabled and index < length:
+            trace.append((index, text[index]))
 
+    # 1. Consume all 'a's
+    while index < length and text[index] == 'a':
+        record_step()
+        index += 1
+    
+    # 2. Check for 'b'
+    match_result = False
+    if index < length and text[index] == 'b':
+        record_step()
+        index += 1
+        
+        # 3. Check for end of string
+        if index == length:
+            match_result = True
+        else:
+            failure_reason = "Extra characters after pattern"
+    else:
+        if index == length:
+            failure_reason = "Missing 'b'"
+        else:
+            failure_reason = f"Unexpected character '{text[index]}' (expected 'b')"
+            
+    return match_result, index, trace, failure_reason
+
+def display_pointer(text, index):
+    """Generates a visual pointer for a specific index."""
+    return f"{text}\n{' ' * index}^"
+
+def run_pro_tests():
+    test_cases = ["aaaaab", "a", "aaaba", "b", "axb"]
+    
+    for text in test_cases:
+        # Toggle set to True for the challenge
+        success, consumed, trace, reason = match_a_star_b_pro(text, tracing_enabled=True)
+        
+        print(f"\nInput: {repr(text)}")
+        print("-" * 30)
+        
+        # Display the trace with pointers
+        if trace:
+            for idx, char in trace:
+                print(f"Step: Consuming '{char}'")
+                print(display_pointer(text, idx))
+        
+        print(f"\nFinal Result: {success}")
+        print(f"Consumed: {consumed} characters")
+        if not success:
+            print(f"Failure Reason: {reason}")
+        print("=" * 40)
+
+run_pro_tests()
+
+```
+
+OUTPUT
+
+```python
+Input: 'aaaaab'
+------------------------------
+Step: Consuming 'a'
+aaaaab
+^
+Step: Consuming 'a'
+aaaaab
+ ^
+Step: Consuming 'a'
+aaaaab
+  ^
+Step: Consuming 'a'
+aaaaab
+   ^
+Step: Consuming 'a'
+aaaaab
+    ^
+Step: Consuming 'b'
+aaaaab
+     ^
+
+Final Result: True
+Consumed: 6 characters
+========================================
+
+Input: 'a'
+------------------------------
+Step: Consuming 'a'
+a
+^
+
+Final Result: False
+Consumed: 1 characters
+Failure Reason: Missing 'b'
+========================================
+
+Input: 'aaaba'
+------------------------------
+Step: Consuming 'a'
+aaaba
+^
+Step: Consuming 'a'
+aaaba
+ ^
+Step: Consuming 'a'
+aaaba
+  ^
+Step: Consuming 'b'
+aaaba
+   ^
+
+Final Result: False
+Consumed: 4 characters
+Failure Reason: Extra characters after pattern
+========================================
+
+Input: 'b'
+------------------------------
+Step: Consuming 'b'
+b
+^
+
+Final Result: True
+Consumed: 1 characters
+========================================
+
+Input: 'axb'
+------------------------------
+Step: Consuming 'a'
+axb
+^
+
+Final Result: False
+Consumed: 1 characters
+Failure Reason: Unexpected character 'x' (expected 'b')
+========================================
+
+```
 
 
