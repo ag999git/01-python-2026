@@ -10,6 +10,7 @@
 
 
 ### Python `re` Module – Questions & Answers
+[Back to Table of Contents](#table-of-contents)
 
 This document contains **questions, answers, and learning points** for teaching Python’s `re` module. Questions are grouped by **difficulty level** and numbered within each category.
 
