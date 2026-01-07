@@ -634,42 +634,43 @@ Why this is needed:
 Learning point:
 -  Regex engines track position in the input string.
 
-3.Check for 'a' (Diamond)
-text[index] == 'a' ?
+3.Check for `'a'` (Diamond)
+`text[index] == 'a' ?`
 What it represents:
-The a* part of the pattern
+-  The a* part of the pattern
 (“zero or more 'a' characters”)
 Two possible paths:
-•	Yes → Go to step 4
-•	No → Go to step 5
+-  Yes → Go to step 4
+-   o → Go to step 5
 Learning point:
-The * operator is implemented using a loop.
 
-4.Consume 'a' (Rectangle)
-Consume 'a'
-index += 1
+The `*` operator is implemented using a loop.
+
+4.Consume `'a'` (Rectangle)
+Consume `'a'`
+`index += 1`
 What it represents:
-Accepting one 'a' and moving forward.
+Accepting one `'a'` and moving forward.
 Important detail:
-•	This step always loops back to step 3
+-  This step always loops back to step 3
 Why:
-There may be more 'a' characters to consume.
+There may be more `'a`' characters to consume.
 Learning point:
 Repetition in regex = looping in control flow.
 
-5.Check for 'b' (Diamond)
+5.Check for `'b'` (Diamond)
 text[index] == 'b' ?
 What it represents:
-The mandatory 'b' in the pattern a*b.
+The mandatory 'b' in the pattern `a*b`.
 Two possible paths:
-•	Yes → Go to step 6
-•	No → Go to step 9 (failure)
+-  Yes → Go to step 6
+-  No → Go to step 9 (failure)
 Learning point:
 Some pattern elements are optional (a*), others are mandatory (b).
 
-6.Consume 'b' (Rectangle)
-Consume 'b'
-index += 1
+6.Consume `'b'` (Rectangle)
+Consume `'b'`
+`index += 1`
 What it represents:
 Accepting the final required character of the pattern.
 Important:
@@ -678,12 +679,12 @@ Learning point:
 Once the pattern ends, only validation remains.
 
 7.End-of-String Check (Diamond)
-index == length ?
+`index == length ?`
 What it represents:
 Checking whether the entire input string has been consumed.
 Two possible paths:
-•	Yes → Go to step 8
-•	No → Go to step 9
+-  Yes → Go to step 8
+-  No → Go to step 9
 Why this matters:
 Extra characters after a valid pattern → no full match.
 Learning point:
