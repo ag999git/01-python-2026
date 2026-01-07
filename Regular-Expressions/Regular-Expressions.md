@@ -611,6 +611,112 @@ The following figure shows how the regex works
 | 9          | **Oval**      | **Return False**         |
 
 
+<details>
+<summary>Detailed explanation of the figure</summary>
+
+1.Start (Oval)
+What it represents:
+The beginning of the matching process.
+What happens here:
+The function is called
+No characters have been processed yet
+Learning point:
+Every algorithm has a clear starting point.
+
+2.Initialization (Rectangle)
+index = 0
+length = len(text)
+What it represents:
+Setting up variables before matching begins.
+Why this is needed:
+•	index keeps track of how many characters have been consumed
+•	length represents total input size
+Learning point:
+Regex engines track position in the input string.
+
+3.Check for 'a' (Diamond)
+text[index] == 'a' ?
+What it represents:
+The a* part of the pattern
+(“zero or more 'a' characters”)
+Two possible paths:
+•	Yes → Go to step 4
+•	No → Go to step 5
+Learning point:
+The * operator is implemented using a loop.
+
+4.Consume 'a' (Rectangle)
+Consume 'a'
+index += 1
+What it represents:
+Accepting one 'a' and moving forward.
+Important detail:
+•	This step always loops back to step 3
+Why:
+There may be more 'a' characters to consume.
+Learning point:
+Repetition in regex = looping in control flow.
+
+5.Check for 'b' (Diamond)
+text[index] == 'b' ?
+What it represents:
+The mandatory 'b' in the pattern a*b.
+Two possible paths:
+•	Yes → Go to step 6
+•	No → Go to step 9 (failure)
+Learning point:
+Some pattern elements are optional (a*), others are mandatory (b).
+
+6.Consume 'b' (Rectangle)
+Consume 'b'
+index += 1
+What it represents:
+Accepting the final required character of the pattern.
+Important:
+After this step, the pattern is finished.
+Learning point:
+Once the pattern ends, only validation remains.
+
+7.End-of-String Check (Diamond)
+index == length ?
+What it represents:
+Checking whether the entire input string has been consumed.
+Two possible paths:
+•	Yes → Go to step 8
+•	No → Go to step 9
+Why this matters:
+Extra characters after a valid pattern → no full match.
+Learning point:
+Full-string matching requires pattern and input to end together.
+
+8.Match Success (Oval)
+Return True
+What it represents:
+A successful match.
+Conditions met:
+•	Zero or more 'a'
+•	Exactly one 'b'
+•	No extra characters
+Learning point:
+A match means everything matched, not just part of the string.
+
+9.Match Failure (Oval)
+Return False
+What it represents:
+Any failure condition.
+Examples that lead here:
+•	Missing 'b' → "a"
+•	Extra characters → "abb", "aaaaba"
+•	Wrong character → "cab"
+Learning point:
+Regex engines fail fast when rules are violated.
+
+
+
+
+</details>
+
+
 
 #### The Complete Python script which simulates a regex engine is as follows:-
 [Back to Table of Contents](#table-of-contents)
