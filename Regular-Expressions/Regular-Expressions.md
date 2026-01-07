@@ -970,6 +970,110 @@ Characters consumed: 1
 
 _Visualization makes invisible execution steps easier to understand._
 
+To fulfill this task, one can modify the `run_tests` function to unpack the triple return values from your previous function and format them into a clear, readable report.
+
+This turns the "invisible" logic of your index pointer into a visible timeline of events.
+The Updated Script is as follows:- 
+
+```python
+def match_a_star_b_extended(text):
+    """
+    Simulates a*b and returns (match_result, characters_consumed, trace)
+    """
+    index = 0
+    length = len(text)
+    trace = []
+    
+    # 1. Consume 'a's
+    while index < length and text[index] == 'a':
+        trace.append(f"Consumed 'a' at position {index}")
+        index += 1
+    
+    # 2. Check for 'b'
+    match_result = False
+    if index < length and text[index] == 'b':
+        trace.append(f"Consumed 'b' at position {index}")
+        index += 1
+        
+        # 3. Check for full match
+        if index == length:
+            match_result = True
+            
+    return match_result, index, trace
+
+def run_tests_v3():
+    """
+    Updated test runner to display detailed consumption info.
+    """
+    test_inputs = ["b", "ab", "aaaaab", "a", "aaaba", ""]
+    
+    for text in test_inputs:
+        # Unpack the three values returned by the function
+        is_match, total_consumed, consumption_trace = match_a_star_b_extended(text)
+        
+        print(f"Input text: {repr(text)}")
+        
+        # Print each step from the trace
+        if not consumption_trace:
+            print("  (No characters consumed)")
+        for step in consumption_trace:
+            print(f"  {step}")
+            
+        print(f"Result: {is_match}")
+        print(f"Characters consumed: {total_consumed}")
+        print("-" * 40)
+
+# Execute the runner
+run_tests_v3()
+
+```
+OUTPUT
+
+```python
+Input text: 'b'
+  Consumed 'b' at position 0
+Result: True
+Characters consumed: 1
+----------------------------------------
+Input text: 'ab'
+  Consumed 'a' at position 0
+  Consumed 'b' at position 1
+Result: True
+Characters consumed: 2
+----------------------------------------
+Input text: 'aaaaab'
+  Consumed 'a' at position 0
+  Consumed 'a' at position 1
+  Consumed 'a' at position 2
+  Consumed 'a' at position 3
+  Consumed 'a' at position 4
+  Consumed 'b' at position 5
+Result: True
+Characters consumed: 6
+----------------------------------------
+Input text: 'a'
+  Consumed 'a' at position 0
+Result: False
+Characters consumed: 1
+----------------------------------------
+Input text: 'aaaba'
+  Consumed 'a' at position 0
+  Consumed 'a' at position 1
+  Consumed 'a' at position 2
+  Consumed 'b' at position 3
+Result: False
+Characters consumed: 4
+----------------------------------------
+Input text: ''
+  (No characters consumed)
+Result: False
+Characters consumed: 0
+----------------------------------------
+
+```
+
+
+
 ### Extension Task 4: Interpret Partial Consumption
 
 **Conceptual Question (Mandatory):-** Answer the following in comments or a separate text file:
