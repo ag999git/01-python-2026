@@ -1,6 +1,9 @@
 ### Table of contents
 - [Python `re` Module – Questions & Answers](#python-re-module--questions--answers)
-- []()
+    - [Beginner level]()
+    - []()
+    - []()
+- [Mini Project: Simulating a Regular Expression Matcher in Python](#mini-project-simulating-a-regular-expression-matcher-in-python)
 - []()
 
 
@@ -174,7 +177,7 @@ re.split(r"\d+", "abc123xyz456")
 
 -   More powerful than `str.split()`.
 
-### 🟡 Intermediate Level
+### Intermediate Level
 [Back to Table of Contents](#table-of-contents)
 
 #### **Q10. What is the difference between greedy and non-greedy quantifiers?**
