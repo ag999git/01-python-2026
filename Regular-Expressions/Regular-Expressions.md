@@ -1114,6 +1114,95 @@ Your extension is complete when:
  - Partial consumption is visible for failed matches.
  - Existing test    cases still work
 
+This extension highlights a crucial concept in regex engines: The difference between "progress" and "completion." Even if an engine successfully follows your instructions for 90% of the string, the final result is a failure if the remaining 10% doesn't fit the pattern.
+
+The Conceptual Answer
+Question: Why does the input "a" consume one character but still result in a failed match for the pattern a*b?
+Answer: > The pattern a*b is a sequence of two requirements. The first requirement (a*) is greedy and successfully consumes the 'a'. However, the engine then looks for the second requirement (the character 'b'). Since the string ends after the 'a', the engine finds nothing where it expected a 'b'. Because the entire pattern was not satisfied, the overall result is False, even though partial progress was made during the first phase.
+
+The Updated Script: Extension Task 4
+
+```python
+def match_a_star_b_engine(text):
+    """
+    Simulates a*b and returns (match_result, characters_consumed, trace)
+    Pattern: zero or more 'a' followed by exactly one 'b'.
+    """
+    index = 0
+    length = len(text)
+    trace = []
+    
+    # Requirement 1: Consume all 'a' characters
+    # We record progress here even if the match later fails.
+    while index < length and text[index] == 'a':
+        trace.append(f"Consumed 'a' at position {index}")
+        index += 1
+    
+    # Requirement 2: Check for 'b'
+    match_result = False
+    if index < length and text[index] == 'b':
+        trace.append(f"Consumed 'b' at position {index}")
+        index += 1
+        
+        # Requirement 3: Entire string must be exhausted
+        if index == length:
+            match_result = True
+            
+    return match_result, index, trace
+
+def run_test_runner_v4():
+    """
+    Runner that focuses on showing partial consumption in failures.
+    """
+    test_cases = [
+        "aaaaab", # Full Match
+        "a",      # Partial match (only a's)
+        "b",      # Full Match (zero a's)
+        "aaac",   # Partial match (a's matched, 'c' stops engine)
+        "aaaba"   # Partial match (pattern found, but trailing 'a' fails it)
+    ]
+    
+    print(f"{'INPUT':<10} | {'RESULT':<7} | {'CONSUMED':<10} | {'TRACE'}")
+    print("-" * 70)
+    
+    for text in test_cases:
+        success, count, history = match_a_star_b_engine(text)
+        
+        # Format the trace into a single line for the table
+        trace_display = " -> ".join([step.split()[-1] for step in history]) if history else "None"
+        
+        print(f"{repr(text):<10} | {str(success):<7} | {count:<10} | {trace_display}")
+        
+        # Detailed output for the "a" case to fulfill task requirements
+        if text == "a":
+            print(f"\n[Focus on 'a']:")
+            for step in history:
+                print(f"  - {step}")
+            print(f"  - Result: {success} (Failed because 'b' was never found)")
+            print(f"  - Total Count: {count}\n" + "-"*70)
+
+run_test_runner_v4()
+
+```
+OUTPUT
+
+```python
+INPUT      | RESULT  | CONSUMED   | TRACE
+----------------------------------------------------------------------
+'aaaaab'   | True    | 6          | 0 -> 1 -> 2 -> 3 -> 4 -> 5
+'a'        | False   | 1          | 0
+
+[Focus on 'a']:
+  - Consumed 'a' at position 0
+  - Result: False (Failed because 'b' was never found)
+  - Total Count: 1
+----------------------------------------------------------------------
+'b'        | True    | 1          | 0
+'aaac'     | False   | 3          | 0 -> 1 -> 2
+'aaaba'    | False   | 4          | 0 -> 1 -> 2 -> 3
+
+```
+
 #### Optional Challenge (Hard)
 
 -   Add a failure reason (missing `'b'`, extra characters)
