@@ -681,6 +681,7 @@ Text       | Expected | Actual   | Result
 
 
 ### Extension Assignment: Tracing Character Consumption in a Manual Regex Engine
+[Back to Table of Contents](#table-of-contents)
 
 **Extension Title:- Visualizing How a Regex Engine Consumes Characters**
 
@@ -706,6 +707,7 @@ This task helps you understand:
 -   How debugging regex patterns becomes possible
 
 ### Extension Task 1: Track Consumed Characters
+[Back to Table of Contents](#table-of-contents)
 
 -   **Task Description**
 
@@ -846,6 +848,7 @@ FINAL RESULT: NO MATCH
 ```
 
 ### Extension Task 2: Modify the Function Return Value
+[Back to Table of Contents](#table-of-contents)
 
 **Task Description:-** Instead of returning only a boolean, update your function to return:
 
@@ -971,6 +974,7 @@ Trace:
 
 
 ### Extension Task 3: Display Consumption Details in Output
+[Back to Table of Contents](#table-of-contents)
 
 **Task Description:-** Update your test runner so that, for each input string, it prints:
 
@@ -1091,9 +1095,8 @@ Characters consumed: 0
 
 ```
 
-
-
 ### Extension Task 4: Interpret Partial Consumption
+[Back to Table of Contents](#table-of-contents)
 
 **Conceptual Question (Mandatory):-** Answer the following in comments or a separate text file:
 
@@ -1137,6 +1140,7 @@ This extension highlights a crucial concept in regex engines: The difference bet
 
 The Conceptual Answer
 Question: Why does the input "a" consume one character but still result in a failed match for the pattern a*b?
+
 Answer: > The pattern a*b is a sequence of two requirements. The first requirement (a*) is greedy and successfully consumes the 'a'. However, the engine then looks for the second requirement (the character 'b'). Since the string ends after the 'a', the engine finds nothing where it expected a 'b'. Because the entire pattern was not satisfied, the overall result is False, even though partial progress was made during the first phase.
 
 The Updated Script: Extension Task 4
@@ -1223,7 +1227,7 @@ INPUT      | RESULT  | CONSUMED   | TRACE
 ```
 
 #### Optional Challenge (Hard)
-
+[Back to Table of Contents](#table-of-contents)
 -   Add a failure reason (missing `'b'`, extra characters)
 -   Highlight the current index using a pointer (`^`)
 -   Store trace entries as `(index, character)` tuples
