@@ -598,6 +598,20 @@ The following figure shows how the regex works
 ![](https://github.com/ag999git/Python-Programming-book-2026/blob/main/book-extra/regex-project-flow-chart.png)
 
 
+| **Number** | **Shape**     | **Meaning**              |
+| ---------- | ------------- | ------------------------ |
+| 1          | **Oval**      | **Start**                |
+| 2          | **Rectangle** | **Initialize variables** |
+| 3          | **Diamond**   | **Check 'a'**            |
+| 4          | **Rectangle** | **Consume 'a'**          |
+| 5          | **Diamond**   | **Check 'b'**            |
+| 6          | **Rectangle** | **Consume 'b'**          |
+| 7          | **Diamond**   | **End-of-string check**  |
+| 8          | **Oval**      | **Return True**          |
+| 9          | **Oval**      | **Return False**         |
+
+
+
 #### The Complete Python script which simulates a regex engine is as follows:-
 [Back to Table of Contents](#table-of-contents)
 ```python
