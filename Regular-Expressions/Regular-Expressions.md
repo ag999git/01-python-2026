@@ -425,7 +425,7 @@ This function should return:
 -   True if the **entire string** matches the pattern `a*b`
 -   False otherwise
 
--   **Variable Names to Use (Recommended)**
+Variable Names to Use (Recommended)**
 
 -   Use variable name `text` → `input string`
 -   Use variable name `index` → `current position in the string`
@@ -465,6 +465,7 @@ After matching `'b'`, your index should be equal to length.
 
 _Regular expressions often use full matches, not partial ones._
 
+----------
 #### Step 3: Create Test Cases as a Sequence
 
 **Task**
@@ -492,6 +493,8 @@ Each tuple should contain:
 **Learning Point**
 
 _Grouping test cases helps automate testing and avoids repetitive code._
+
+----------
 
 #### Step 4: Execute Tests Using a Loop
 
@@ -524,6 +527,8 @@ This function should:
 **Learning Point**
 
 _Automated testing is a key skill in professional programming._
+
+----------
 
 #### Step 5: Call the Test Runner
 
@@ -582,9 +587,7 @@ Your final script should contain:
 
 
 
--   Performance and clean design.
-
-
+#### The Complete Python script which simulates a regex engine is as follows:-
 
 ```python
 
