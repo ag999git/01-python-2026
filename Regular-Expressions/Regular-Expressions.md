@@ -2712,6 +2712,7 @@ Failure Reason: Unexpected character 'x' (expected 'b')
 <details>
 
 <summary> Line by Line explanation of the Optional Challenge    </summary>
+
 #### Line-by-Line Explanation
 
 ----------
