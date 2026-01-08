@@ -832,7 +832,6 @@ Text       | Expected | Actual   | Result
 <details>
 <summary> Detailed explanation of above script </summary>
 
-XXX
 1. Function Definition
    - `def match_a_star_b(text):`
    This function checks whether the input string text fully matches the regex pattern: `a*b`
