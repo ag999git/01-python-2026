@@ -417,6 +417,10 @@ print('is prime 11->', is_prime(11))  # True
 However the above script given in the book does not explain the working in details.
 Given below is an improved version of the script with helpful comments
 
+<details>
+<summary> Assignment: Detecting Prime Numbers Using Regular Expressions Detailed script </summary>
+
+
 ```python
 import re
 
@@ -475,10 +479,9 @@ def is_prime_unary(n: int) -> bool:
 # Demonstration
 print("is_prime_unary(7) ->", is_prime_unary(7))   # True  (prime)
 print("is_prime_unary(9) ->", is_prime_unary(9))   # False (composite)
-
-
-
 ```
+
+</details>
 
 ### Mini Project: Simulating a Regular Expression Matcher in Python
 [Back to Table of Contents](#table-of-contents)
