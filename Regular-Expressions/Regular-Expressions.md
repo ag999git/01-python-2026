@@ -2423,7 +2423,7 @@ This is exactly how real regex engines behave.
 
 ##### Why does the input `"a"` consume one character but still fail for `a*b`?
 
-##### Answer 
+##### Answer  
 
 > The pattern `a*b` has **two requirements**:
 > 
