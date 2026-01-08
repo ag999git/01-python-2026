@@ -687,6 +687,11 @@ You should submit:
 
 ### Naming styles in Python programming
 
+<details>
+
+<summary> Naming styles in Python programming  </summary>
+
+
 [Back to Table of Contents](#table-of-contents)
 
 ```python
@@ -933,7 +938,7 @@ print("pascal to upper-> ", pascal_to_upper("PascalCaseExample"))  # pascal to u
 
 ```
 
-
+</details>
 
 ### Mini Project: Simulating a Regular Expression Matcher in Python
 [Back to Table of Contents](#table-of-contents)
