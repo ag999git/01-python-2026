@@ -1509,6 +1509,10 @@ This task helps you understand:
 ### Extension Task 1: Track Consumed Characters
 [Back to Table of Contents](#table-of-contents)
 
+<details>
+
+<summary>          Extension Task 1: Track Consumed Characters  </summary>
+
 -   **Task Description**
 
 Modify your existing function:
