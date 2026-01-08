@@ -33,6 +33,10 @@ This document contains **questions, answers, and learning points** for teaching 
 
 ###  Beginner Level
 [Back to Table of Contents](#table-of-contents)
+
+<details>
+<summary> Beginner Level </summary>
+
 #### **Q1. What are the similarities and differences between** `re.match()` **and** `re.search()`**?**
 
 **Answer:**
@@ -190,6 +194,8 @@ re.split(r"\d+", "abc123xyz456")
 **Learning Points:**
 
 -   More powerful than `str.split()`.
+
+</details>
 
 ### Intermediate Level
 [Back to Table of Contents](#table-of-contents)
