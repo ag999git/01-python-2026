@@ -1777,56 +1777,91 @@ The Updated Script is as follows:-
 ```python
 def match_a_star_b_extended(text):
     """
-    Simulates a*b and returns (match_result, characters_consumed, trace)
+    Simulates matching the regex pattern a*b.
+
+    Returns a tuple:
+    (match_result, characters_consumed, trace)
+
+    Where:
+    - match_result        -> True if the entire string matches a*b
+    - characters_consumed -> Number of characters consumed (final index value)
+    - trace               -> List showing step-by-step character consumption
     """
+
+    # index works like a regex engine's pointer/cursor
     index = 0
+
+    # Total length of the input string
     length = len(text)
+
+    # trace keeps a human-readable log of what was consumed and where
     trace = []
-    
-    # 1. Consume 'a's
+
+    # --------------------------------------------------
+    # STEP 1: Consume all leading 'a' characters (a*)
+    # --------------------------------------------------
+    # As long as we are inside the string AND the current
+    # character is 'a', keep consuming it.
     while index < length and text[index] == 'a':
         trace.append(f"Consumed 'a' at position {index}")
-        index += 1
-    
-    # 2. Check for 'b'
-    match_result = False
+        index += 1  # Move the cursor forward
+
+    # --------------------------------------------------
+    # STEP 2: Check for exactly one 'b'
+    # --------------------------------------------------
+    match_result = False  # Assume failure by default
+
     if index < length and text[index] == 'b':
         trace.append(f"Consumed 'b' at position {index}")
         index += 1
-        
-        # 3. Check for full match
+
+        # --------------------------------------------------
+        # STEP 3: Check for full match (end of string)
+        # --------------------------------------------------
+        # If index has reached the end, the ENTIRE string
+        # matches the pattern a*b
         if index == length:
             match_result = True
-            
+
+    # Return all internal details:
+    # - Whether it matched
+    # - How many characters were consumed
+    # - Step-by-step trace
     return match_result, index, trace
+
 
 def run_tests_v3():
     """
-    Updated test runner to display detailed consumption info.
+    Test runner that displays:
+    - Input text
+    - Character-by-character consumption
+    - Match result
+    - Total characters consumed
     """
     test_inputs = ["b", "ab", "aaaaab", "a", "aaaba", ""]
-    
+
     for text in test_inputs:
-        # Unpack the three values returned by the function
+        # Unpack the three returned values from the matcher
         is_match, total_consumed, consumption_trace = match_a_star_b_extended(text)
-        
+
         print(f"Input text: {repr(text)}")
-        
-        # Print each step from the trace
+
+        # If nothing was consumed, make that explicit
         if not consumption_trace:
             print("  (No characters consumed)")
-        for step in consumption_trace:
-            print(f"  {step}")
-            
+        else:
+            # Print each consumption step clearly
+            for step in consumption_trace:
+                print(f"  {step}")
+
         print(f"Result: {is_match}")
         print(f"Characters consumed: {total_consumed}")
         print("-" * 40)
 
-# Execute the runner
+
+# Execute the test runner
 run_tests_v3()
 
-```
-OUTPUT
 
 ```python
 Input text: 'b'
@@ -1868,8 +1903,12 @@ Input text: ''
 Result: False
 Characters consumed: 0
 ----------------------------------------
-
 ```
+
+<details>
+<summary>    XXX  </summary>
+</details>
+
 
 ### Extension Task 4: Interpret Partial Consumption
 [Back to Table of Contents](#table-of-contents)
