@@ -414,7 +414,71 @@ print('is prime 7->', is_prime(7))  # True
 print('is prime 9->', is_prime(9))  # False
 print('is prime 11->', is_prime(11))  # True
 ```
+However the above script given in the book does not explain the working in details.
+Given below is an improved version of the script with helpful comments
 
+```python
+import re
+
+def is_prime_unary(n: int) -> bool:
+    """
+    Check whether a number is prime using a regular expression
+    applied to its unary representation.
+
+    Core idea:
+    1. Convert the number n into unary form: n → "111...1"
+    2. A composite number can be split into equal repeating blocks.
+        Examples:
+        4  → "1111" = "11" repeated 2 times. So 4 is not prime
+        9  → "111111111" = "111" repeated 3 times. So 9 is not prime
+        10 → "11111" repeated 2 times. So 10 is not prime
+        11 → "11111111111" cannot be split this way. So 11 is prime
+    3. Prime numbers cannot be split this way (except trivial cases).
+
+    IMPORTANT:
+    - This method is for learning REGEX concepts:
+        * grouping
+        * backreferences
+        * greedy vs non-greedy matching
+    - It is extremely inefficient for large numbers.
+    """
+
+    # Regex pattern that matches NON-PRIME numbers in unary form
+    #
+    # ^1?$            → matches "" or "1"
+    #                   (represents 0 or 1 → not prime)
+    #
+    # |               → OR
+    #
+    # ^(11+?)\1+$     → matches repeated equal blocks:
+    #   (11+?)        → capture a block of at least two '1's
+    #                   '+' ensures length ≥ 2
+    #                   '?' makes it NON-GREEDY (smallest block first)
+    #
+    #   \1+           → repeat the *same captured block*
+    #                   until the end of the string
+    #
+    # If this pattern matches, the number is NOT prime.
+    non_prime_pattern = r'^1?$|^(11+?)\1+$'
+
+    # Convert the number to unary representation
+    # Example: n = 5 → "11111"
+    unary = "1" * n
+
+    # Try to match the NON-PRIME pattern
+    match = re.match(non_prime_pattern, unary)
+
+    # If there is NO match, the number is prime
+    return match is None
+
+
+# Demonstration
+print("is_prime_unary(7) ->", is_prime_unary(7))   # True  (prime)
+print("is_prime_unary(9) ->", is_prime_unary(9))   # False (composite)
+
+
+
+```
 
 ### Mini Project: Simulating a Regular Expression Matcher in Python
 [Back to Table of Contents](#table-of-contents)
