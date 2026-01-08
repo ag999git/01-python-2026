@@ -1185,12 +1185,12 @@ FINAL RESULT: NO MATCH
 ```
 
 <details>
-<summary>  **Line by Line explanation os script of Extension 1**  </summary>
+<summary>  Line by Line explanation os script of Extension 1  </summary>
 
 
-#### PART 2: **Line-by-Line Explanation**
+#### **Line-by-Line Explanation**
 
-##### 🔹 Function Header
+##### Function Header
 
 `def  match_a_star_b_visualized(text):` 
 
@@ -1205,7 +1205,7 @@ This mimics a **real regex engine with tracing enabled**.
 
 ----------
 
-#####🔹 Cursor and Length
+##### Cursor and Length
 
 `index = 0 length = len(text)` 
 
@@ -1230,7 +1230,7 @@ This represents **internal regex state tracking**.
 
 ----------
 
-##### 🔹 Step 1: Matching `a*`
+##### Step 1: Matching `a*`
 
 `while index < length and text[index] == 'a':` 
 
@@ -1258,7 +1258,7 @@ Moves the cursor forward — no going back.
 
 ----------
 
-##### 🔹 Step 2: Matching `'b'`
+##### Step 2: Matching `'b'`
 
 `if index < length and text[index] == 'b':` 
 
@@ -1275,7 +1275,7 @@ Even single characters are tracked.
 
 ----------
 
-##### 🔹 Step 3: Full Match Check
+##### Step 3: Full Match Check
 
 `if index == length:` 
 
@@ -1291,7 +1291,7 @@ This enforces:
 
 ----------
 
-##### 🔹 Success Output
+##### Success Output
 
 ```python
 print("\nTRACE LOG:") 
@@ -1309,7 +1309,7 @@ Shows:
 
 ----------
 
-##### 🔹 Failure Handling
+##### Failure Handling
 
 If anyone of following:
 
