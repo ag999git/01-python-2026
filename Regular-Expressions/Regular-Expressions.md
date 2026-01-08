@@ -779,6 +779,98 @@ Ab1@xy?         → BAD
 </details>
 
 
+<details>
+
+<summary> Line by line explanation of script which asks user to select password with certain restrictions  </summary>
+
+#### Line-by-Line Explanation
+
+##### Regex pattern creation
+
+`password_pattern = (` 
+
+-   Builds a **single regex** for all conditions.
+    
+
+----------
+
+### 2️⃣ Anchors
+
+```python
+r'^' 
+... 
+r'$'
+``` 
+
+-   Ensure the **entire password** is checked.
+    
+-   Prevents extra or invalid characters.
+    
+
+----------
+
+##### Lookaheads (Condition checks)
+
+
+```python
+r'(?=.*[a-z])'  # At least one lowercase letter
+r'(?=.*[A-Z])   # At least one uppercase letter
+r'(?=.*[0-9])   # At least one digit
+r'(?=.*[!@#$%^&*])' # At least one allowed special character
+```
+
+> Lookaheads **do not consume characters** — they only check.
+
+----------
+
+##### Allowed characters + length
+
+`r'[A-Za-z0-9!@#$%^&*]{6,12}'` 
+
+-   Only allowed characters
+    
+-   Length between 6 and 12
+    
+
+----------
+
+##### Test password list
+
+`test_passwords = [...]` 
+
+-   Contains both **valid and invalid** passwords
+    
+-   Makes testing repeatable and visible
+    
+
+----------
+
+##### Validation loop
+
+`for pwd in test_passwords:` 
+
+-   Tests each password automatically
+    
+
+`re.match(password_pattern, pwd)` 
+
+-   Matches from the **start of the string**
+    
+
+----------
+
+##### Output formatting
+
+`print(f"{pwd:15} → GOOD")` 
+
+-   Aligns output neatly
+    
+-   Easy to scan in class
+
+
+</details>
+
+
 ### Naming styles in Python programming
 
 <details>
