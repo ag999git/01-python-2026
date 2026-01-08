@@ -1,4 +1,6 @@
 ![Python 3.12+ Badge](https://img.shields.io/badge/Python-3.12%2B-blue)
+![Static Badge](https://img.shields.io/badge/regular_expressions-blue?logo=python&color=light%20green)
+
 
 ### Table of contents
 - [Python `re` Module – Questions & Answers](#python-re-module--questions--answers)
