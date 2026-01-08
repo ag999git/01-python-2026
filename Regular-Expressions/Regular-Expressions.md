@@ -1747,7 +1747,7 @@ FINAL RESULT: NO MATCH
 =======================================================
 
 ```
-
+</details>
 <details>
 <summary>  Line by Line explanation of Script of Extension 1  </summary>
 
