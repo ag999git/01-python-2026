@@ -1186,7 +1186,7 @@ FINAL RESULT: NO MATCH
 ```
 
 <details>
-<summary>  Line by Line explanation os script of Extension 1  </summary>
+<summary>  Line by Line explanation of Script of Extension 1  </summary>
 
 
 #### **Line-by-Line Explanation**
