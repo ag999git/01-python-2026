@@ -8,6 +8,7 @@
     - [Beginner level]()
     - [Intermediate Level](#intermediate-level)
     - [Advance level](#advanced-level)
+- [Using regular expression (re) to check for primality]()
 - [Mini Project: Simulating a Regular Expression Matcher in Python](#mini-project-simulating-a-regular-expression-matcher-in-python)
     - [The Complete Python script which simulates a regex engine](#the-complete-python-script-which-simulates-a-regex-engine-is-as-follows-)
 - [Extension Assignment: Tracing Character Consumption in a Manual Regex Engine](#extension-assignment-tracing-character-consumption-in-a-manual-regex-engine)
@@ -395,7 +396,24 @@ re.compile(r""" \d+     # digits \s*     # optional space """, re.VERBOSE)
 
 **Learning Points:**
 
+### Using regular expression (re) to check for primality
+[Back to Table of Contents](#table-of-contents)
+This section contains detailed explanation to the problem given in the book.
 
+The script implementing given in the book is
+```python
+import re
+def is_prime(n):
+    pat_for_prime = r'^1?$|^(11+?)\1+$'
+    mo = re.match(pat_for_prime, "1" * n)
+    if mo == None:
+        return True
+    else:
+        return False
+print('is prime 7->', is_prime(7))  # True
+print('is prime 9->', is_prime(9))  # False
+print('is prime 11->', is_prime(11))  # True
+```
 
 
 ### Mini Project: Simulating a Regular Expression Matcher in Python
