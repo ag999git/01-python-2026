@@ -2315,6 +2315,10 @@ This is **advanced thinking explained simply**.
 ### Extension Task 3: Display Consumption Details in Output
 [Back to Table of Contents](#table-of-contents)
 
+<details>
+
+<summary>     Extension Task 3: Display Consumption Details in Output </summary>
+
 **Task Description:-** Update your test runner so that, for each input string, it prints:
 
 -   Match result
@@ -2469,6 +2473,8 @@ Result: False
 Characters consumed: 0
 ----------------------------------------
 ```
+
+</details>
 
 <details>
 <summary> Line-by-Line Explanation of above script Task 3  </summary>
