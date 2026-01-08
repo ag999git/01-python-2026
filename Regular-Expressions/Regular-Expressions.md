@@ -442,8 +442,11 @@ print('is prime 11->', is_prime(11))  # True
 ```
 However the above script given in the book does not explain the working in details.
 Given below is an improved version of the script with helpful comments (In collapsable Headers)
+
 </details>
+
 <details>
+
 <summary> Assignment: Detecting Prime Numbers Using Regular Expressions Detailed script </summary>
 
 
