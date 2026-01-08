@@ -669,48 +669,54 @@ Learning point:
 Some pattern elements are optional (a*), others are mandatory (b).
 
 6.Consume `'b'` (Rectangle)
-Consume `'b'`
-`index += 1`
-What it represents:
-Accepting the final required character of the pattern.
+-  Consume `'b'`
+-  `index += 1`
+-  What it represents:
+   -  Accepting the final required character of the pattern.
 Important:
-After this step, the pattern is finished.
+-  After this step, the pattern is finished.
 Learning point:
-Once the pattern ends, only validation remains.
+-  Once the pattern ends, only validation remains.
 
 7.End-of-String Check (Diamond)
+
 `index == length ?`
+
 What it represents:
-Checking whether the entire input string has been consumed.
+-  Checking whether the entire input string has been consumed.
+
 Two possible paths:
 -  Yes → Go to step 8
 -  No → Go to step 9
 Why this matters:
-Extra characters after a valid pattern → no full match.
+-  Extra characters after a valid pattern → no full match.
 Learning point:
-Full-string matching requires pattern and input to end together.
+-  Full-string matching requires pattern and input to end together.
 
 8.Match Success (Oval)
-Return True
+-  Return `True`
 What it represents:
-A successful match.
+-  A successful match.
+
 Conditions met:
-•	Zero or more 'a'
-•	Exactly one 'b'
-•	No extra characters
+-  Zero or more 'a'
+-  Exactly one 'b'
+-  No extra characters
 Learning point:
-A match means everything matched, not just part of the string.
+-  A match means everything matched, not just part of the string.
 
 9.Match Failure (Oval)
-Return False
+
+Return `False`
+
 What it represents:
-Any failure condition.
+-  Any failure condition.
 Examples that lead here:
-•	Missing 'b' → "a"
-•	Extra characters → "abb", "aaaaba"
-•	Wrong character → "cab"
+-  Missing 'b' → "a"
+-  Extra characters → "abb", "aaaaba"
+-  Wrong character → "cab"
 Learning point:
-Regex engines fail fast when rules are violated.
+-  Regex engines fail fast when rules are violated.
 
 
 
@@ -849,7 +855,7 @@ so that it also keeps track of:
 -   Introduce a variable named `trace`
     -  This should be a **`list`**
     -  Each time a character is consumed, append a message such as:
-    -  Consumed `a` at position `0`
+      -  Consumed `a` at position `0`
 
 -   Continue to use:
     -  `index` to track position
@@ -1515,7 +1521,7 @@ Failure Reason: Unexpected character 'x' (expected 'b')
 ### Final Takeaway for Students
 “A regex engine does not simply succeed or fail — it tries, moves forward, and then decides.”
 
-
+[Back to Table of Contents](#table-of-contents)
 
 
 
