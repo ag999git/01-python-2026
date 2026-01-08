@@ -829,7 +829,10 @@ Text       | Expected | Actual   | Result
 ''         | False    | False    | PASS
 
 ```
+<details>
+<summary> Detailed explanation of above script </summary>
 
+</details>
 
 ### Extension Assignment: Tracing Character Consumption in a Manual Regex Engine
 [Back to Table of Contents](#table-of-contents)
