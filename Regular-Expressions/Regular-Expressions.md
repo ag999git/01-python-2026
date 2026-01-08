@@ -1476,7 +1476,10 @@ Text       | Expected | Actual   | Result
 ### Extension Assignment: Tracing Character Consumption in a Manual Regex Engine
 [Back to Table of Contents](#table-of-contents)
 
-**Extension Title:- Visualizing How a Regex Engine Consumes Characters**
+
+
+<details>
+<summary> Extension Title:- Visualizing How a Regex Engine Consumes Characters </summary>
 
 ##### Purpose of the Extension
 
@@ -1498,6 +1501,8 @@ This task helps you understand:
 -   Why partial matches occur
 -   Why some regexes fail after “making progress”
 -   How debugging regex patterns becomes possible
+
+</details>
 
 ### Extension Task 1: Track Consumed Characters
 [Back to Table of Contents](#table-of-contents)
