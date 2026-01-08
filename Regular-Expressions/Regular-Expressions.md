@@ -9,7 +9,7 @@
     - [Intermediate Level](#intermediate-level)
     - [Advance level](#advanced-level)
 - [Mini Project: Using regular expression (re) to check for primality](#mini-project-simulating-a-regular-expression-matcher-in-python)
-- []()
+- [Write a regexp which places certain restrictions on a password that a user may select](#problem--write-a-regexp-which-places-the-following-restrictions-on-a-password-that-a-user-may-select-)
 - [Naming Styles in Programming](#naming-styles-in-python-programming) 
 - [Mini Project: Simulating a Regular Expression Matcher in Python](#mini-project-simulating-a-regular-expression-matcher-in-python)
     - [The Complete Python script which simulates a regex engine](#the-complete-python-script-which-simulates-a-regex-engine-is-as-follows-)
@@ -686,6 +686,9 @@ You should submit:
 </details>
 
 ### Write a regexp which places certain restrictions on a password that a user may select
+
+[Back to Table of Contents](#table-of-contents)
+
 <details>
 
 <summary>   Script which asks user to select a password with certain restrictions    </summary>
