@@ -945,6 +945,10 @@ print("pascal to upper-> ", pascal_to_upper("PascalCaseExample"))  # pascal to u
 
 **Project Title:- Implementing a Simple Regex Pattern Matcher (a*b) Without Using re**
 
+<details>
+
+<summary> Implementing a Simple Regex Pattern Matcher (a*b) Without Using re </summary>
+
 #### 1. Project Objective
 
 In this task, you will **simulate the working of a regular expression engine** for a very simple pattern using **basic Python logic**, without using the `re` module.
@@ -1158,6 +1162,7 @@ The following figure shows how the regex works
 | 8          | **Oval**      | **Return True**          |
 | 9          | **Oval**      | **Return False**         |
 
+</details>
 
 <details>
 <summary>Detailed explanation of the figure</summary>
