@@ -2685,6 +2685,11 @@ This is exactly how **debuggers, parsers, and regex engines** explain themselves
 ### Extension Task 4: Interpret Partial Consumption
 [Back to Table of Contents](#table-of-contents)
 
+<details>
+
+<summary> Extension Task 4: Interpret Partial Consumption </summary>
+
+
 **Conceptual Question (Mandatory):-** Answer the following in comments or a separate text file:
 
 Why does the input "a" consume one character but still result in a failed match for the pattern a*b?
@@ -2860,6 +2865,8 @@ INPUT      | RESULT  | CONSUMED   | TRACE
 'aaaba'    | False   | 4          | 0 -> 1 -> 2 -> 3
 
 ```
+
+</details>
 
 <details>
 <summary> Line by Line explanation of above script (Task 4)  </summary>
