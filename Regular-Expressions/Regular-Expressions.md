@@ -1280,6 +1280,11 @@ Learning point:
 
 #### The Complete Python script which simulates a regex engine is as follows:-
 [Back to Table of Contents](#table-of-contents)
+
+<details>
+
+<summary> The Complete Python script which simulates a regex engine is as follows:-  </summary>
+
 ```python
 
 def match_a_star_b(text):
@@ -1382,6 +1387,8 @@ Text       | Expected | Actual   | Result
 ''         | False    | False    | PASS
 
 ```
+</details>
+
 <details>
 <summary> Detailed explanation of above script </summary>
 
