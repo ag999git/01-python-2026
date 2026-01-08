@@ -195,7 +195,7 @@ re.split(r"\d+", "abc123xyz456")
 **Learning Points:**
 
 -   More powerful than `str.split()`.
-
+ 
 </details>
 
 ### Intermediate Level
