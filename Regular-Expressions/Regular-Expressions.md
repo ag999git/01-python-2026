@@ -9,7 +9,7 @@
     - [Intermediate Level](#intermediate-level)
     - [Advance level](#advanced-level)
 - [Mini Project: Using regular expression (re) to check for primality](#mini-project-simulating-a-regular-expression-matcher-in-python)
-- [Naming Styles in Programming]() 
+- [Naming Styles in Programming](#naming-styles-in-python-programming) 
 - [Mini Project: Simulating a Regular Expression Matcher in Python](#mini-project-simulating-a-regular-expression-matcher-in-python)
     - [The Complete Python script which simulates a regex engine](#the-complete-python-script-which-simulates-a-regex-engine-is-as-follows-)
 - [Extension Assignment: Tracing Character Consumption in a Manual Regex Engine](#extension-assignment-tracing-character-consumption-in-a-manual-regex-engine)
@@ -651,6 +651,8 @@ You should submit:
 </details>
 
 ### Naming styles in Python programming
+
+[Back to Table of Contents](#table-of-contents)
 
 ```python
 import re
