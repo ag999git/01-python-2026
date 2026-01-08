@@ -416,6 +416,8 @@ re.compile(r""" \d+     # digits \s*     # optional space """, re.VERBOSE)
 
 **Learning Points:**
 
+</details>
+
 ### Using regular expression (re) to check for primality
 [Back to Table of Contents](#table-of-contents)
 
