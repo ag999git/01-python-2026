@@ -3967,9 +3967,9 @@ This is now a **full-featured teaching tool for a regex engine.**
 
 <details>
 
-<summary>   ZZZ          </summary>
+<summary>   How Does Python’s re Module Expose Pattern and Match Types Without Defining Them? </summary>
 
-
+[Back to Table of Contents](#table-of-contents)
 
 #### How Does Python’s re Module Expose Pattern and Match Types Without Defining Them?
 
