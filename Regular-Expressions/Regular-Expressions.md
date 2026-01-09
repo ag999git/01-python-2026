@@ -11,7 +11,7 @@
 - [Mini Project: Using regular expression (re) to check for primality](#mini-project-simulating-a-regular-expression-matcher-in-python)
 - [Write a regexp which places certain restrictions on a password that a user may select](#problem--write-a-regexp-which-places-the-following-restrictions-on-a-password-that-a-user-may-select-)
 - [Naming Styles in Programming](#naming-styles-in-python-programming) 
-- [Deterministic Finite Automatons (DFA) and Nondeterministic Finite Automaton (NFA)]()
+- [Deterministic Finite Automatons (DFA) and Nondeterministic Finite Automaton (NFA)](#deterministic-finite-automaton-dfa)
 - [Mini Project: Simulating a Regular Expression Matcher in Python](#mini-project-simulating-a-regular-expression-matcher-in-python)
     - [The Complete Python script which simulates a regex engine](#the-complete-python-script-which-simulates-a-regex-engine-is-as-follows-)
 - [Extension Assignment: Tracing Character Consumption in a Manual Regex Engine](#extension-assignment-tracing-character-consumption-in-a-manual-regex-engine)
