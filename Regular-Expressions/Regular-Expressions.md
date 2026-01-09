@@ -3965,13 +3965,16 @@ This is now a **full-featured teaching tool for a regex engine.**
 [Back to Table of Contents](#table-of-contents)
 
 
+### How Does Python’s re Module Expose Pattern and Match Types Without Defining Them? 
+[Back to Table of Contents](#table-of-contents)
+
 <details>
 
 <summary>   How Does Python’s re Module Expose Pattern and Match Types Without Defining Them? </summary>
 
-[Back to Table of Contents](#table-of-contents)
 
-#### How Does Python’s re Module Expose Pattern and Match Types Without Defining Them?
+
+
 
 We may call this exercise as:- The Mystery of the "Missing" Classes
 This exercise will help you to understand how the re module of Python:-
