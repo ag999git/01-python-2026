@@ -26,8 +26,6 @@
 
 
 
-
-
 ### Scripts from book in the Chapter on Regular Expressions 
 <details>
   <summary><strong> Scripts from book on Regular Expressions (Click to Expand)</strong></summary>
@@ -51,42 +49,242 @@ print(re.findall(r"\d\d\d", text)) # ['234']
   </details>
 
   <details>
-    <summary>2. Second Sub-Section</summary>
+    <summary>2. The following script shows how re.compile() creates and returns a Pattern object called p. The type() of p is Pattern as shown by the print() function.</summary>
     
-    Add your content for section 2 here.
+```python
+import re
+# Factory function re.compile() takes a regex pattern string
+# and returns a compiled regex Pattern object.  
+# r before the string indicates a raw string literal. 
+
+p = re.compile("a*b")
+print(type(p))  # Output: <class 're.Pattern'>  
+# Output shows that p is indeed a compiled regex object.
+
+
+```
+
+    
   </details>
 
   <details>
-    <summary>3. Third Sub-Section</summary>
+    <summary>3. Example script on groups </summary>
     
-    Add your content for section 3 here.
+```python
+import re
+text = "abc 123 def 456"
+
+# 1. Search two groups of digits separated by non-digits. 
+# Ignore non-digit group.
+m1 = re.search(r"(\d+)\D+(\d+)", text) # Only two capturing groups
+print("First digits:", m1.group(1))  # Output: 123
+print("Second digits:", m1.group(2)) # Output: 456
+
+# 2. Search three groups: digits, non-digits, digits. 
+# Do not ignore non-digit group.
+m2 = re.search(r"(\d+)(\D+)(\d+)", text) # Three capturing groups
+print("First digits:", m2.group(1))   # Output: 123
+print("Non-digits:", m2.group(2))     # Output: " def " 
+print("Second digits:", m2.group(3))  # Output: 456
+
+```
+
+
   </details>
 
   <details>
-    <summary>4. Fourth Sub-Section</summary>
+    <summary>4. Script using convenience functions</summary>
     
-    Add your content for section 4 here.
+```python
+import re
+
+# Sample text used for all examples
+text = "abc 123 def 456"
+
+# 1. re.match()
+# Tries to match the pattern ONLY at the beginning of the string
+result = re.match(r"abc", text)  # Match 'abc' at start
+print(f"Match {r'abc'} With {text}-> {result}")
+# Match abc With abc 123 def 456-> <re.Match object; span=(0, 3), match='abc'> 
+
+# 2. re.fullmatch()
+# Matches the pattern against the ENTIRE string
+result = re.fullmatch(r"abc 123 def 456", text) #Fullmatch entire string
+print(f"Fullmatch {r'abc 123 def 456'} With {text}-> {result}")
+# Fullmatch abc 123 def 456 With abc 123 def 456-> <re.Match object; span=(0, 15), match='abc 123 def 456'> 
+
+# 3. re.search()
+# Searches for the pattern ANYWHERE in the string
+result = re.search(r"123", text)  # Search for '123'
+print(f"Search {r'123'} In {text}-> {result}")
+# Search 123 In abc 123 def 456-> <re.Match object; span=(4, 7), match='123'>
+
+# 4. re.findall()
+# Finds ALL matches and returns them as a LIST
+# r"\d+" matches sequences of digits
+result = re.findall(r"\d+", text)  # Find all digit sequences
+print(f"Findall {r'\d+'} In {text}-> {result}")
+# Findall \d+ In abc 123 def 456-> ['123', '456']
+
+# 5. re.finditer()
+# Finds ALL matches and returns an ITERATOR
+# Each item is a Match object
+print("re.finditer(r'\d+', text):")
+for match in re.finditer(r"\d+", text):  # Iterate over all matches
+    print("Match:", match.group(), "at position", match.start())
+# Match: 123 at position 4
+# Match: 456 at position 12 
+
+# 6. re.split()
+# Splits the string wherever the pattern matches
+# r"\s+" matches one or more whitespace characters
+result = re.split(r"\s+", text)  # Split on whitespace
+print(f"Split {r'\s+'} In {text}-> {result}")
+# Split \s+ In abc 123 def 456-> ['abc', '123', 'def', '456']
+
+# 7. re.sub()
+# Replaces ALL matches with a new value
+result = re.sub(r"\d+", "#", text)  # Replace digit sequences with '#'
+print(f"Sub {r'\d+'} With '#' In {text}-> {result}")
+# Sub \d+ With '#' In abc 123 def 456-> abc # def #
+
+# 8. re.subn()
+# Same as sub(), but ALSO returns the count of replacements
+result = re.subn(r"\d+", "#", text)  # Replace digit sequences with '#' and get count
+print(f"Subn {r'\d+'} With '#' In {text}-> ", result)
+# Subn \d+ With '#' In abc 123 def 456->  ('abc # def #', 2)
+
+
+
+```
+
+
   </details>
 
   <details>
-    <summary>5. Fifth Sub-Section</summary>
+    <summary>5. 11.15.	Script using Instance methods of the Pattern class objects </summary>
     
-    Add your content for section 5 here.
+```python
+import re
+
+# Sample text used for all examples
+text = "abc 123 def 456"
+
+# Compile patterns ONCE and reuse them
+pattern_abc = re.compile(r"abc")
+pattern_full = re.compile(r"abc 123 def 456")
+pattern_123 = re.compile(r"123")
+pattern_digits = re.compile(r"\d+")
+pattern_space = re.compile(r"\s+")
+
+# 1. Pattern.match()
+# Matches ONLY at the beginning of the string
+result = pattern_abc.match(text)  # Match 'abc' at start
+print(f"Match {r'abc'} With {text}-> {result}")
+# OUTPUT: Match abc With abc 123 def 456-> <re.Match object; span=(0, 3), match='abc'>
+
+# 2. Pattern.fullmatch()
+# Matches the ENTIRE string
+result = pattern_full.fullmatch(text)  # Full match entire string
+print(f"Fullmatch {r'abc 123 def 456'} With {text}-> {result}")
+# OUTPUR: Fullmatch abc 123 def 456 With abc 123 def 456-> <re.Match object; span=(0, 15), match='abc 123 def 456'>
+
+# 3. Pattern.search()
+# Searches ANYWHERE in the string
+result = pattern_123.search(text)  # Search for '123'
+print(f"Search {r'123'} In {text}-> {result}")
+# OUTPUT: Search 123 In abc 123 def 456-> <re.Match object; span=(4, 7), match='123'>
+
+# 4. Pattern.findall()
+# Finds ALL matches and returns a LIST
+result = pattern_digits.findall(text)  # Find all digit sequences
+print(f"Findall {r'\d+'} In {text}-> {result}")
+# OUTPUT: Findall \d+ In abc 123 def 456-> ['123', '456']
+
+# 5. Pattern.finditer()
+# Returns an ITERATOR of Match objects
+print("Pattern.finditer(r'\d+', text):")
+for match in pattern_digits.finditer(text):
+    print("Match:", match.group(), "at position", match.start())
+# OUTPUT: Match: 123 at position 4
+# OUTPUT: Match: 456 at position 12
+
+# 6. Pattern.split()
+# Splits the string where the pattern matches
+result = pattern_space.split(text)  # Split on whitespace
+print(f"Split {r'\s+'} In {text}-> {result}")
+# OUTPUT: Split \s+ In abc 123 def 456-> ['abc', '123', 'def', '456']
+
+# 7. Pattern.sub()
+# Replaces ALL matches with a new value
+result = pattern_digits.sub("#", text) # Replace digit sequences with '#'
+print(f"Sub {r'\\d+'} With '#' In {text}-> {result}")
+# OUTPUT: Sub \d+ With '#' In abc 123 def 456-> abc # def #
+
+# 8. Pattern.subn()
+# Replaces matches AND returns the count
+result = pattern_digits.subn("#", text)  # Replace digit sequences with '#' and get count
+print(f"Subn {r'\\d+'} With '#' In {text}-> ", result)
+# OUTPUT: Subn \d+ With '#' In abc 123 def 456-> ('abc # def #', 2)
+
+
+
+```
+
+
+
   </details>
 
   <details>
-    <summary>6. Sixth Sub-Section</summary>
+    <summary>6. Script on working of methods of the Match object</summary>
     
-    Add your content for section 6 here.
+```python
+
+import re
+m = re.search(r"(\d+)", "abc 123 def 456")  # Search for one or more digits
+
+# 1. m.group() or m.group(0) - Entire match. 
+print(f"m.group(0) -> {m.group(0)}")  # Entire match
+# Output: m.group(0) -> 123
+
+# 2. m.group(1) - First capturing group
+print(f"m.group(1) -> {m.group(1)}")  #  
+# Output: m.group(1) -> 123 
+
+# 3. m.groups() - All capturing groups as a tuple. Note the plural 'groups'
+print(f"m.groups() -> {m.groups()}") 
+# Output: m.groups() -> ('123',) 
+
+# 4. m.groupdict() - Named capturing groups as a dictionary
+m_named = re.search(r"(?P<digits>\d+)", "abc 123 def 456")  # Search with named capturing group
+print(f"m_named.groupdict() -> {m_named.groupdict()}")  
+# Output: m_named.groupdict() -> {'digits': '123'}  
+
+```
+#### Script showing use of groups
+
+```python
+import re
+match = re.match(r"(abc)(123)", "abc123")
+print(match.group())    # "abc123" matches the entire match
+print(match.group(0))   # "abc123" also matches the entire match
+print(match.group(1))   # "abc" matches the first capturing group
+print(match.group(2))   # "123" matches the second capturing group
+print(match.group(1, 2))  # ("abc", "123") matches both groups as a tuple
+print(match.group(1, 2, 0))  # ("abc", "123", "abc123") matches groups 1, 2, and the entire match as a tuple
+
+# Following if uncommented raises IndexError as there is no group 3  
+# print(match.group(3))  # ERROR
+
+
+
+```
+
   </details>
 
 </details>
  
 
-
-
-    
-</details>
 
 
 
