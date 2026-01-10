@@ -676,7 +676,7 @@ This document contains **questions, answers, and learning points** for teaching 
 
 <details>
 
-<summary> Beginner Level Q/A </summary>
+<summary> Beginner Level Q/A (Click to Expand) </summary>
 
 
 #### **Q1. What are the similarities and differences between** `re.match()` **and** `re.search()`**?**
@@ -844,7 +844,7 @@ re.split(r"\d+", "abc123xyz456")
 
 <details>
 
-<summary> Intermediate Level Q/A </summary>
+<summary> Intermediate Level Q/A (Click to Expand)</summary>
 
 #### **Q10. What is the difference between greedy and non-greedy quantifiers?**
 
@@ -990,7 +990,7 @@ re.search(r"(?i)cat", "CAT")
 
 <details>
 
-<summary> Advanced Level Q/A </summary>
+<summary> Advanced Level Q/A (Click to Expand) </summary>
 
 #### **Q18. What is the difference between a Pattern object and a Match object?**
 
@@ -1060,7 +1060,7 @@ re.compile(r""" \d+     # digits \s*     # optional space """, re.VERBOSE)
 
 ### Some questions/ scripts based on re module
 <details>
-<summary>  Some questions/ scripts based on re module </summary>
+<summary>  Some questions/ scripts based on re module (Click to Expand)</summary>
 
 
 #### Question 1. Write a Python script that checks whether a given string **starts with one or more digits**.
@@ -1254,7 +1254,7 @@ for text in texts:
 
 <details>
 
-<summary> Using regular expression (re) to check for primality </summary>
+<summary> Using regular expression (re) to check for primality (Click to Expand) </summary>
 
 
 This section contains detailed explanation to the problem given in the book.
@@ -1353,7 +1353,7 @@ print("is_prime_unary(9) ->", is_prime_unary(9))   # False (composite)
 
 <details>
 
-<summary> Assignment: Detecting Prime Numbers Using Regular Expressions (details) </summary>
+<summary> Assignment: Detecting Prime Numbers Using Regular Expressions (details) (Click to Expand)</summary>
 
 ##### Objective
 
@@ -1611,7 +1611,7 @@ Ab1@xy?         → BAD
 
 <details>
 
-<summary> Line by line explanation of script which asks user to select password with certain restrictions  </summary>
+<summary> Line by line explanation of script which asks user to select password with certain restrictions (Click to Expand) </summary>
 
 #### Line-by-Line Explanation
 
@@ -1705,7 +1705,7 @@ r'(?=.*[!@#$%^&*])' # At least one allowed special character
 
 <details>
 
-<summary> Naming styles in Python programming  </summary>
+<summary> Naming styles in Python programming (Click to Expand) </summary>
 
 
 [Back to Table of Contents](#table-of-contents)
@@ -1959,7 +1959,7 @@ print("pascal to upper-> ", pascal_to_upper("PascalCaseExample"))  # pascal to u
 ### Deterministic Finite Automatons(DFA) and Nondeterministic Finite Automaton (NFA)
 
 <details>
-<summary>  Deterministic Finite Automatons(DFA) and Nondeterministic Finite Automaton (NFA)   </summary>
+<summary>  Deterministic Finite Automatons(DFA) and Nondeterministic Finite Automaton (NFA) (Click to Expand)  </summary>
 The book discusses about DFA and NFA briefly. Here you will find a detailed discussion on the topic.
 
 #### Deterministic Finite Automaton (DFA)
@@ -2194,7 +2194,7 @@ These engines are called _regex-directed_ because:
 
 <details>
 
-<summary> Implementing a Simple Regex Pattern Matcher (a*b) Without Using re </summary>
+<summary> Implementing a Simple Regex Pattern Matcher (a*b) Without Using re (Click to Expand) </summary>
 
 #### 1. Project Objective
 
@@ -2412,7 +2412,7 @@ The following figure shows how the regex works
 </details>
 
 <details>
-<summary>Detailed explanation of the figure</summary>
+<summary>Detailed explanation of the figure (Click to Expand) </summary>
 
 1.Start (Oval)
 What it represents:
@@ -2525,7 +2525,7 @@ Learning point:
 
 <details>
 
-<summary> The Complete Python script which simulates a regex engine is as follows:-  </summary>
+<summary> The Complete Python script which simulates a regex engine is as follows:- (Click to Expand) </summary>
 
 ```python
 
@@ -2632,7 +2632,7 @@ Text       | Expected | Actual   | Result
 </details>
 
 <details>
-<summary> Detailed explanation of above script </summary>
+<summary> Detailed explanation of above script (Click to Expand) </summary>
 
 1. Function Definition
    - `def match_a_star_b(text):`
@@ -2728,7 +2728,7 @@ Text       | Expected | Actual   | Result
 
 
 <details>
-<summary> Extension Title:- Visualizing How a Regex Engine Consumes Characters </summary>
+<summary> Extension Title:- Visualizing How a Regex Engine Consumes Characters (Click to Expand) </summary>
 
 ##### Purpose of the Extension
 
@@ -2758,7 +2758,7 @@ This task helps you understand:
 
 <details>
 
-<summary>          Extension Task 1: Track Consumed Characters  </summary>
+<summary>          Extension Task 1: Track Consumed Characters (Click to Expand) </summary>
 
 -   **Task Description**
 
@@ -2996,7 +2996,7 @@ FINAL RESULT: NO MATCH
 ```
 </details>
 <details>
-<summary>  Line by Line explanation of Script of Extension 1  </summary>
+<summary>  Line by Line explanation of Script of Extension 1 (Click to Expand) </summary>
 
 
 #### **Line-by-Line Explanation**
@@ -3161,7 +3161,7 @@ Your `trace` list **models that internal state explicitly**.
 
 <details>
 
-<summary>   Extension Task 2: Modify the Function Return Value  </summary>
+<summary>   Extension Task 2: Modify the Function Return Value (Click to Expand) </summary>
 
 **Task Description:-** Instead of returning only a boolean, update your function to return:
 
@@ -3333,7 +3333,7 @@ Trace:
 </details>
 
 <details>
-<summary>        Line by Line explanation of Extension Task 2     </summary>
+<summary>        Line by Line explanation of Extension Task 2 (Click to Expand)    </summary>
 
 
 ####  **Line-by-Line Explanation**
@@ -3571,7 +3571,7 @@ This is **advanced thinking explained simply**.
 
 <details>
 
-<summary>     Extension Task 3: Display Consumption Details in Output </summary>
+<summary>     Extension Task 3: Display Consumption Details in Output (Click to Expand) </summary>
 
 **Task Description:-** Update your test runner so that, for each input string, it prints:
 
@@ -3731,7 +3731,7 @@ Characters consumed: 0
 </details>
 
 <details>
-<summary> Line-by-Line Explanation of above script Task 3  </summary>
+<summary> Line-by-Line Explanation of above script Task 3 (Click to Expand) </summary>
 
 #### Line-by-Line Explanation of above script
 
@@ -3934,7 +3934,7 @@ This is exactly how **debuggers, parsers, and regex engines** explain themselves
 
 <details>
 
-<summary> Extension Task 4: Interpret Partial Consumption </summary>
+<summary> Extension Task 4: Interpret Partial Consumption (Click to Expand) </summary>
 
 
 **Conceptual Question (Mandatory):-** Answer the following in comments or a separate text file:
@@ -4116,7 +4116,7 @@ INPUT      | RESULT  | CONSUMED   | TRACE
 </details>
 
 <details>
-<summary> Line by Line explanation of above script (Task 4)  </summary>
+<summary> Line by Line explanation of above script (Task 4) (Click to Expand) </summary>
 
 #### Line-by-Line Explanation
 
@@ -4328,7 +4328,7 @@ This extension beautifully teaches:
 
 <details>
 
-<summary> Optional Challenge (Hard) </summary>
+<summary> Optional Challenge (Hard) (Click to Expand) </summary>
 
 -   Add a failure reason (missing `'b'`, extra characters)
 -   Highlight the current index using a pointer (`^`)
@@ -4549,7 +4549,7 @@ Failure Reason: Unexpected character 'x' (expected 'b')
 
 <details>
 
-<summary> Line by Line explanation of the Optional Challenge    </summary>
+<summary> Line by Line explanation of the Optional Challenge  (Click to Expand)  </summary>
 
 #### Line-by-Line Explanation
 
@@ -4798,7 +4798,7 @@ This is now a **full-featured teaching tool for a regex engine.**
 
 <details>
 
-<summary>   How Does Python’s re Module Expose Pattern and Match Types Without Defining Them? </summary>
+<summary>   How Does Python’s re Module Expose Pattern and Match Types Without Defining Them? (Click to Expand) </summary>
 
 We may call this exercise as:- The Mystery of the "Missing" Classes
 
