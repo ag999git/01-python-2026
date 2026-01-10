@@ -4,6 +4,7 @@
 
 
 ### Table of contents
+- [XXX]()
 - [Python `re` Module – Questions & Answers](#python-re-module--questions--answers)
     - [Beginner level](#beginner-level)
     - [Intermediate Level](#intermediate-level)
@@ -24,6 +25,59 @@
 -  [How Does Python’s re Module Expose Pattern and Match Types Without Defining Them?](#how-does-pythons-re-module-expose-pattern-and-match-types-without-defining-them)
 
 
+
+
+
+### XXX
+<details>
+  <summary><strong> Main Section Title (Click to Expand)</strong></summary>
+  
+  <br> <details>
+    <summary>1. First Sub-Section</summary>
+    
+    Add your content for section 1 here.
+    
+    - You can use lists
+    - Because of the empty lines above
+  </details>
+
+  <details>
+    <summary>2. Second Sub-Section</summary>
+    
+    Add your content for section 2 here.
+  </details>
+
+  <details>
+    <summary>3. Third Sub-Section</summary>
+    
+    Add your content for section 3 here.
+  </details>
+
+  <details>
+    <summary>4. Fourth Sub-Section</summary>
+    
+    Add your content for section 4 here.
+  </details>
+
+  <details>
+    <summary>5. Fifth Sub-Section</summary>
+    
+    Add your content for section 5 here.
+  </details>
+
+  <details>
+    <summary>6. Sixth Sub-Section</summary>
+    
+    Add your content for section 6 here.
+  </details>
+
+</details>
+ 
+
+
+
+    
+</details>
 
 
 
