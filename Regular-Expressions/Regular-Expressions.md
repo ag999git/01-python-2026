@@ -282,6 +282,31 @@ print(match.group(1, 2, 0))  # ("abc", "123", "abc123") matches groups 1, 2, and
 
   </details>
 
+  <details>
+    <summary> 7. Script showing use of flags in compile()    </summary>
+
+```python
+import re
+p = re.compile(r"hello", re.I | re.M)
+print(p.flags)  # Output: 10 the combined value of re.I (2) and re.M (8)
+To check whether a specific flag is set, you use the bitwise AND operator (&). The following script shows this:-
+import re
+p = re.compile(r"hello", re.I | re.M)  # Compile pattern with IGNORECASE and MULTILINE flags
+
+if p.flags & re.I:  # Check if IGNORECASE flag is set
+    print("Case Insensitive is ON")
+
+if p.flags & re.S:  # Check if DOTALL flag is set
+    print("DotAll is ON")
+else:
+    print("DotAll is OFF")
+
+```
+
+
+      
+  </details>
+
 </details>
  
 
