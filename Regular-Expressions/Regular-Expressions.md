@@ -1,4 +1,3 @@
-<img src="https://github.com/ag999git/images_figures/blob/master/Cover-Python-programming-by-Anurag-Gupta.jpeg" width="20%" alt="Image description">
 
 <img src="https://github.com/ag999git/Python-Programming-book-2026/blob/main/book-extra/Cover-Python-programming-by-Anurag-Gupta.jpeg" width="20%" alt="Image description">
 
