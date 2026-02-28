@@ -335,14 +335,13 @@ calculate_internal_grades()  # This is an internal function/ private to the scri
 ### 6. 
 
 
-@@@
   
 
 #### Python Keywords — Meaning + Example in form of a Table are given below
 
 | Keyword | Meaning / Simple Explanation | Example Sentence (Code) | Real-Life Example / Analogy |
 | --- | --- | --- | --- |
-| and | Both conditions must be true | if x > 0 and y > 0: | “I will go for a walk if it’s sunny and I have free time.” |
+| `and` | Both conditions must be true | if x > 0 and y > 0: | “I will go for a walk if it’s sunny and I have free time.” |
 | or | At least one condition must be true | if age < 18 or age > 60: | “I will drink tea or coffee — either one is fine.” |
 | not | Reverses a condition | if not is_raining: | “I will go out not if it’s raining.” |
 | if | Decision-making | if score >= 50: | “If it’s your birthday, you get a gift.” |
@@ -375,7 +374,6 @@ calculate_internal_grades()  # This is an internal function/ private to the scri
 | exec | Execute Python code dynamically | exec("print('Hello')") | “Follow these written instructions exactly.” |
 | print | Show output | print("Hello") | Saying something out loud. |
 
-@@@
 
 
 [Back toTable of Contents](#table-of-contents)
