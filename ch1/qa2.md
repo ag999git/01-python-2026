@@ -188,3 +188,46 @@ Taken from:- [Here](https://visualgit.readthedocs.io/en/latest/pages/naming_conv
 | An advantage of compiled code is that it hides the source code from the end user (which might be intellectual property) because instead of deploying the original human-readable source code, you deploy an obscure binary executable file. | Source code is difficult to hide |
 | If your source code is compiled, you need to compile a different executable for each type of processor and/or platform that you want your program to run on | Interpreted languages are more portable |
 | Compiled programs are already converted into an executable and so are “ready to run”. | They are not “ready to run”. Rather have to be interpreted |
+
+
+  
+
+#### j. Give point-wise Comparison between Hash (#) and triple quotes (`'''` or `"""`)
+
+**1. Hash (#) — Single-Line Comments**
+
+-   Starts with # and continues to the end of the line.
+-   Used mainly for explaining **logic**, **steps**, or **reasoning** inside the code.
+-   Helpful for programmers who want to **understand, debug, or modify** the code.
+-   Typically scattered throughout functions and code blocks.
+-   Can be used for multi-line comments by repeating # on each line.
+-   Ignored entirely by the Python interpreter.
+
+**2 Triple Quotes (''' or """) — Multi-Line Strings Used as Comments**
+
+-   Written using triple single quotes ''' or triple double quotes """.
+-   Technically creates a **multi-line string**, not a true comment — but becomes a "comment" only if unused.
+-   Mainly used for **docstrings**: documentation for modules, classes, and functions.
+-   Appears immediately after a def or class statement.
+-   Describes **usage**, **purpose**, **arguments**, and **returns** — the _user interface_.
+-   Tools like Sphinx, pydoc, and IDEs can automatically extract them.
+-   Can also be placed on one line as a single-line docstring.
+
+  
+
+  
+
+Comparison:-
+
+| Feature / Purpose | # Single-Line Comment | ''’ / """ Multi-Line Comment (Docstring) |
+| --- | --- | --- |
+| Syntax | # comment | """ comment """ or ''' comment ''' |
+| Type | True comment | Multi-line string used as a comment or docstring |
+| Interpreter behavior | Completely ignored | Created as a string; ignored only if not assigned or used |
+| Typical use | Explain logic or code steps | Document modules, classes, and functions |
+| Audience | Programmers modifying/understanding code | Users who want to know how to use the code |
+| Location | Anywhere in code | Usually immediately after def, class, or module top |
+| Extraction by tools | Not extracted | Automatically extracted by documentation tools |
+| Best for | Inline explanations and quick notes | Official documentation of API/usage |
+| Multi-line use | Yes, by repeating # on each line | Naturally supports multi-line formatting |
+| Single-line use | Yes | Possible by placing opening and closing quotes on the same line |
