@@ -172,7 +172,7 @@ test.py
 print("Hello from VS Code!")
 ```
 
-4. Run using **Run ▶ button** at top-right  
+4. Run using **Run button** at top-right  
    OR
 
 ```
