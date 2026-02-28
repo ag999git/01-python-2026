@@ -1,4 +1,3 @@
-
 ## Python Programming: Exercise 
 
 ### Exercise Questions and Answers
@@ -69,7 +68,7 @@
 * **Further Study:** [Python Multi-line Strings - Real Python](https://realpython.com/python-strings/#triple-quoted-strings)
 
 
-##### a. What are some other good naming conventions in python?
+#### h. What are some other good naming conventions in python?
 
 ·       Avoid using names that are too general or too wordy. Strike a good balance between the two.
 
@@ -84,3 +83,96 @@
   
 
 Taken from:- [Here](https://visualgit.readthedocs.io/en/latest/pages/naming_convention.html)
+
+## Python Programming: 
+### Exercise 2
+
+#### a. What does the term “dynamic typing” mean?
+**Answer:** In Python, you don't have to declare what type of data a variable holds (like an integer or a string) beforehand. The "type" is determined automatically at runtime based on the value you assign to it. You can even change a variable from a number to a string later in the same program.
+
+* **Further Study:** [Dynamic Typing in Python - GeeksforGeeks](https://www.geeksforgeeks.org/dynamic-typing-in-python/)
+
+---
+
+#### b. What does the term “automatic memory management” mean?
+**Answer:** This means the programmer doesn't have to manually allocate or free up computer memory. Python has a built-in "Garbage Collector" that automatically detects when an object is no longer being used and clears it from memory to make room for new data.
+
+* **Further Study:** [Memory Management in Python - Real Python](https://realpython.com/python-memory-management/)
+
+---
+
+#### c. What is the difference between “source code” and “object code”?
+**Answer:** * **Source Code:** This is the code written by the human (you) in a high-level language like Python. It is readable by people.
+* **Object Code:** This is the low-level code (often called bytecode or machine code) that the computer's processor can actually understand and execute.
+
+* **Further Study:** [Source Code vs Object Code - TechTarget](https://www.techtarget.com/searchitoperations/definition/source-code)
+
+---
+
+#### d. What is the difference between “open source code” and “proprietary code”?
+**Answer:** * **Open Source:** The source code is free for anyone to look at, modify, and distribute (e.g., Python).
+* **Proprietary:** The code is owned by an individual or a company. Users cannot see or change the inner workings; they can only use the software as provided (e.g., Microsoft Windows or Adobe Photoshop).
+
+* **Further Study:** [Open Source vs Proprietary - Red Hat](https://www.redhat.com/en/topics/open-source/what-is-open-source)
+
+---
+
+#### e. What are CPython, Jython, and IronPython and how are they different?
+**Answer:** Python is a set of rules (a language description). Different "implementations" are built to run these rules in different environments:
+* **CPython:** The standard version written in C (the one you download from python.org).
+* **Jython:** Allows Python to run on the Java platform.
+* **IronPython:** Designed to work with Microsoft’s .NET framework.
+
+* **Further Study:** [Python Implementations - Python.org](https://www.python.org/download/alternatives/)
+
+---
+
+#### f. Is Python a case-sensitive language?
+**Answer:** **Yes.** Python treats uppercase and lowercase letters differently. For example, a variable named `Age` is completely different from a variable named `age`.
+
+* **Further Study:** [Case Sensitivity in Python - W3Schools](https://www.w3schools.com/python/gloss_python_variable_names.asp)
+
+---
+
+#### g. Can mutable objects change their value but keep their id()?
+**Answer:** **Yes.** "Mutable" means changeable. For example, if you have a list, you can add or remove items from it. The content changes, but the list remains the same "object" in memory, so its `id()` (the memory address) stays the same.
+
+* **Further Study:** [Mutable vs Immutable - Programiz](https://www.programiz.com/python-programming/methods/built-in/id)
+
+---
+
+#### h. When we say that Jupyter Notebook is a “server-client” application, what does it mean?
+**Answer:** It means the application has two parts:
+1.  **The Server:** A program running on your computer (or a remote web server) that does the heavy lifting and runs your Python code.
+2.  **The Client:** The web browser (like Chrome or Firefox) where you type your code and see the results.
+
+* **Further Study:** [How Jupyter Works - Jupyter Documentation](https://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipynb_works.html)
+
+---
+
+#### i. Print is a statement in Python 2.x but it is a function in Python 3.x. Explain the difference.
+**Answer:** * In **Python 2**, `print` was a keyword (like `if` or `while`), so you wrote `print "Hello"`.
+* In **Python 3**, `print()` is a function, meaning you **must** use parentheses: `print("Hello")`. This change makes the language more consistent and allows for extra settings, like changing how lines end.
+
+* **Further Study:** [Python 2 print vs Python 3 print - Real Python](https://realpython.com/python-print/#python-2-vs-python-3-print)
+
+---
+
+#### j. What do the terms “explicit line continuation” and “implicit line continuation” mean?
+**Answer:** * **Explicit:** Using a backslash (`\`) to tell Python that a single line of code continues on the next line.
+* **Implicit:** Python automatically knows a line continues if you haven't closed a parenthesis `()`, bracket `[]`, or brace `{}`. This is the preferred way to write long lines.
+
+* **Further Study:** [Python Line Continuation - GeeksforGeeks](https://www.geeksforgeeks.org/line-continuation-in-python/)
+
+---
+
+#### k. What is an “identifier” in Python? What are the common rules for writing identifiers?
+**Answer:** An identifier is a name given to entities like variables, functions, or classes. 
+
+**Common Rules:**
+1.  Can contain letters (a-z, A-Z), digits (0-9), or underscores (`_`).
+2.  Must **not** start with a digit.
+3.  Cannot be a Python keyword (like `if`, `else`, or `for`).
+4.  Cannot contain special symbols like `!`, `@`, `#`, or `$`.
+
+* **Further Study:** [Python Identifiers - TutorialsPoint](https://www.tutorialspoint.com/python/python_basic_identifiers.htm)
