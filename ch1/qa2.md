@@ -176,3 +176,15 @@ Taken from:- [Here](https://visualgit.readthedocs.io/en/latest/pages/naming_conv
 4.  Cannot contain special symbols like `!`, `@`, `#`, or `$`.
 
 * **Further Study:** [Python Identifiers - TutorialsPoint](https://www.tutorialspoint.com/python/python_basic_identifiers.htm)
+
+
+
+##### l. What are the differences between interpreted and compiled language?
+
+| Compiled | Interpreted |
+| --- | --- |
+| Faster performance by directly using the native code of the target machine | Slow to execute because each statement had to be interpreted into machine code every time it was executed |
+| Need to run a compilation stage | No need to run a compilation stage: can execute code directly "on the fly" |
+| An advantage of compiled code is that it hides the source code from the end user (which might be intellectual property) because instead of deploying the original human-readable source code, you deploy an obscure binary executable file. | Source code is difficult to hide |
+| If your source code is compiled, you need to compile a different executable for each type of processor and/or platform that you want your program to run on | Interpreted languages are more portable |
+| Compiled programs are already converted into an executable and so are “ready to run”. | They are not “ready to run”. Rather have to be interpreted |
