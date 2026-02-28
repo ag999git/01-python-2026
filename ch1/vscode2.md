@@ -3,7 +3,7 @@
 
 
 
-## VS Code + Python + Jupyter — Complete Setup Guide (Windows, Beginner-Friendly)
+## VS Code + Python + Jupyter — Complete Setup Guide on Windows
 
 This guide explains how to install VS Code, configure Python/Jupyter inside it, select interpreters, create virtual environments, and run notebooks inside VS Code.
 
