@@ -32,8 +32,8 @@
 
 ---
 
-#### d. What does the ‘>>>’ on python shell indicate?
-**Answer:** The **`>>>`** is called the **Python Prompt**. It indicates that the Python interpreter is ready and waiting for you to type a command. Once you press Enter, Python will execute that command immediately.
+#### d. What does the `>>>` on python shell indicate?
+**Answer:** The `>>>` is called the **Python Prompt**. It indicates that the Python interpreter is ready and waiting for you to type a command. Once you press Enter, Python will execute that command immediately.
 
 * **Further Study:** [The Python Interpreter - Python Docs](https://docs.python.org/3/tutorial/interpreter.html)
 
